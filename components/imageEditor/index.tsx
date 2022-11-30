@@ -1,9 +1,8 @@
 import * as Slider from "@radix-ui/react-slider";
 import { updateDoc } from "firebase/firestore";
-import { useState, useContext, useCallback } from "react";
+import { useState, useCallback } from "react";
 import Cropper from "react-easy-crop";
 import { BiCrop } from "react-icons/bi";
-import { CompsContext } from "../../context/compsContext";
 import getCroppedImg from "../theme/services/common/cropImg";
 
 const ImageEditor = ({
@@ -19,7 +18,6 @@ const ImageEditor = ({
   const [zoom, setZoom] = useState(1);
   const [croppedAreaPixels, setCroppedAreaPixels] = useState(null);
   const [croppedImage, setCroppedImage] = useState(null);
-  // const { comps, setComps } = useContext(CompsContext);
   const onCropComplete = useCallback((croppedArea, croppedAreaPixels) => {
     setCroppedAreaPixels(croppedAreaPixels);
   }, []);

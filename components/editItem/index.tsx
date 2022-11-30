@@ -1,13 +1,9 @@
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import { IoDuplicateOutline } from "react-icons/io5";
 import { TfiTrash } from "react-icons/tfi";
-import { CompsContext } from "../../context/compsContext";
-import { useContext } from "react";
 import { useDispatch } from "react-redux";
-import { getItemIndex } from "../../features/edit-image";
 import { updateDoc } from "firebase/firestore";
 const EditItem = ({ index, comp, themeData, comps }) => {
-  // const { comps, setComps } = useContext(CompsContext);
   const dispatch = useDispatch();
   const lastItem = comp.compData.items.lastIndexOf(
     comp.compData.items[comp.compData.items.length - 1]
