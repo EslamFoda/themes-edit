@@ -71,11 +71,13 @@ const MainEditor = () => {
 
   return (
     <div
+      style={{ height: "100%" }}
       className={[themeColor && `theme-${themeColor}`, `theme-light`]
         .filter(Boolean)
         .join(" ")}
     >
       <div
+        style={{ height: "100%" }}
         className={[
           `font font-choosedFont`,
           themeFont && `fontName-${themeFont}`,
@@ -88,7 +90,6 @@ const MainEditor = () => {
           themeId={themeId}
           animate={currentEffect}
           comps={comps}
-          containerWidth={containerWidth}
         />
       </div>
     </div>

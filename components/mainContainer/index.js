@@ -4,7 +4,6 @@ import DragAndDrop from "./common/dragAndDrop";
 import Preview from "./common/preview";
 import Editable from "./common/editable";
 const MainContainer = ({
-  containerWidth,
   comps,
   animate,
   themeId,
@@ -19,7 +18,6 @@ const MainContainer = ({
         <Preview
           animate={animate}
           comps={comps}
-          containerWidth={containerWidth}
           device={device}
           editSections={editSections}
           themeId={themeId}

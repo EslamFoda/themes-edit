@@ -5,7 +5,6 @@ import useAnimation from "../../../hooks/useAnimation";
 import { doc } from "firebase/firestore";
 import { db } from "../../../utlis/firebase";
 const Preview = ({
-  containerWidth,
   comps,
   device,
   editSections,
@@ -16,15 +15,7 @@ const Preview = ({
   const themeData = doc(db, "themes", themeId);
 
   return (
-    <div
-      style={{
-        margin: "0px auto",
-        flex: "1 1 0%",
-        transition: "width 0.2s ease 0s",
-        width: containerWidth,
-      }}
-      className="flex flex-col"
-    >
+    <div className="flex h-full flex-col">
       {comps?.map((comp, i) => {
         const Component = containersData[comp.compName];
         return (
