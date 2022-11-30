@@ -56,8 +56,7 @@ const effects = ["no-animation", "fade-up", "zoom-in-up", "flip-up"];
 const modes = ["light", "dark"];
 
 const MainEditor = () => {
-  const { compName, comps, editSections, themeId, themeColor, themeFont } =
-    useMainData();
+  const { comps, editSections, themeId, themeColor, themeFont } = useMainData();
 
   const [currentColor, setCurrentColor] = useStickyState(
     colors[0],
@@ -67,28 +66,12 @@ const MainEditor = () => {
     effects[0],
     "theme-effects"
   );
-  const [currentFont, setCurrentFont] = useStickyState(fonts[0], "theme-font");
-  const [mode, setMode] = useStickyState(modes[0], "theme-mode");
+
   const containerWidth = useSelector((state: any) => state.mainWidth.width);
 
-  useEffect(() => {
-    if (themeId) {
-      const docRef = doc(db, "themes", themeId);
-      setDoc(
-        docRef,
-        {
-          themeColor: currentColor,
-          themeFont: currentFont,
-        },
-        {
-          merge: true,
-        }
-      ).then(() => console.log("Document updated"));
-    }
-  }, [currentColor, currentFont, themeId]);
   return (
     <div
-      className={[themeColor && `theme-${themeColor}`, mode && `theme-${mode}`]
+      className={[themeColor && `theme-${themeColor}`, `theme-light`]
         .filter(Boolean)
         .join(" ")}
     >
